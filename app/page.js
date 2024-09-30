@@ -106,7 +106,7 @@ const page = () => {
           </div>
         </motion.div>
       </div>
-      <section className=" bg-background pb-16 pt-0">
+      <section className="pb-16 pt-0">
         <div className=" mx-auto ">
           <h2 className="text-3xl font-bold text-center mb-8 text-primary">
             Key Features

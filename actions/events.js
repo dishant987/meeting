@@ -1,7 +1,8 @@
+"use server";
 import { eventSchema } from "@/app/lib/validators";
 import { db } from "@/lib/prisma";
 
-const { auth } = require("@clerk/nextjs/dist/types/server");
+import { auth } from "@clerk/nextjs/server";
 
 export async function createEvent(data) {
   const { userId } = auth();
@@ -24,5 +25,9 @@ export async function createEvent(data) {
       userId: user.id,
     },
   });
-  return event;
+  return {
+    success: true,
+    event,
+    message: "Event created",
+  };
 }

@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
           >
             <Toaster position="top-right" reverseOrder={false} />
             <MainHeader />
-            <main className="min-h-screen bg-gradient-to-b  bg-blue-50 dark:from-gray-900 dark:to-gray-900">
+            <main className="min-h-screen bg-gradient-to-b from-blue-50 to-blue-100  dark:from-gray-900 dark:to-gray-900">
               {children}
             </main>
             <Footer />

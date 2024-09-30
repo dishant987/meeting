@@ -33,7 +33,7 @@ export default function CreateEventDrawer() {
         <Drawer open={open} onClose={handleClose}>
 
             <DrawerContent>
-                <div className="mx-auto w-full max-w-lg m-10">
+                <div className="mx-auto w-full max-w-3xl m-10">
                     <DrawerHeader>
                         <DrawerTitle className="text-3xl p-3 text-center">Create New Event</DrawerTitle>
 

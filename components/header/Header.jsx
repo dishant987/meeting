@@ -21,7 +21,7 @@ export default function Header() {
   };
 
   return (
-    <header className={`bg-white shadow-lg dark:bg-gray-700 border-b-2 border-gray-200`}>
+    <header className={`bg-white shadow-lg dark:bg-gray-700  border-blue-500`}>
       <div className="container mx-auto px-4 py-4 flex items-center justify-between flex-wrap">
         <Link href="/" className="flex items-center space-x-2">
           <svg

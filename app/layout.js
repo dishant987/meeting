@@ -2,9 +2,11 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/theme-provider";
+import MainHeader from "@/components/header/MainHeader";
+import { Toaster } from "react-hot-toast";
+import CreateEventDrawer from "@/components/create-event";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -23,11 +25,13 @@ export default function RootLayout({ children }) {
             enableSystem
             disableTransitionOnChange
           >
-            <Header />
-            <main className="min-h-screen bg-gradient-to-b  from-blue-50 to-white dark:from-gray-900 dark:to-gray-900">
+            <Toaster position="top-right" reverseOrder={false} />
+            <MainHeader />
+            <main className="min-h-screen bg-gradient-to-b  bg-blue-50 dark:from-gray-900 dark:to-gray-900">
               {children}
             </main>
             <Footer />
+            <CreateEventDrawer />
           </ThemeProvider>
         </body>
       </html>

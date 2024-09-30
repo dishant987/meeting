@@ -19,35 +19,35 @@ const testimonials = [
         name: "Alex Johnson",
         role: "Project Manager",
         comment: "This scheduler app has revolutionized how our team coordinates meetings. It's intuitive and saves us hours each week!",
-        avatar: "/placeholder.svg?height=100&width=100"
+        // avatar: "/placeholder.svg?height=100&width=100"
     },
     {
         id: 2,
         name: "Sarah Lee",
         role: "Freelance Designer",
         comment: "As someone working with clients in different time zones, this app is a lifesaver. The time zone feature is spot on!",
-        avatar: "/placeholder.svg?height=100&width=100"
+        // avatar: "/placeholder.svg?height=100&width=100"
     },
     {
         id: 3,
         name: "Mike Chen",
         role: "Startup Founder",
         comment: "The privacy controls are fantastic. I can share my availability without compromising my schedule. Highly recommended!",
-        avatar: "/placeholder.svg?height=100&width=100"
+        // avatar: "/placeholder.svg?height=100&width=100"
     },
     {
         id: 4,
         name: "Emily Taylor",
         role: "HR Manager",
         comment: "Scheduling interviews has never been easier. The reminders feature ensures we have fewer no-shows. It's a game-changer!",
-        avatar: "/placeholder.svg?height=100&width=100"
+        // avatar: "/placeholder.svg?height=100&width=100"
     },
     {
         id: 5,
         name: "Chris Smith",
         role: "Software Engineer",
         comment: "The integration with calendars is seamless. This app is a must-have for busy professionals!",
-        avatar: "/placeholder.svg?height=100&width=100"
+        // avatar: "/placeholder.svg?height=100&width=100"
     }
 ]
 const works = [
@@ -55,27 +55,27 @@ const works = [
         id: 1,
         name: "Sign Up",
         description: "Create your free Scheduling account",
-        icon: Users
+
     },
     {
         id: 2,
         name: "Set Avalibility",
         description: "Define your availability for meetings",
-        icon: Users
+
 
     },
     {
         id: 3,
         name: "Share Your Link",
         description: "Send your link to your clients to schedule meetings",
-        icon: Users
+
 
     },
     {
         id: 4,
         name: "Get Booked",
         description: "Recive confirmation of your meeting",
-        icon: Users
+
 
     }
 
@@ -115,7 +115,9 @@ export default function Testimonials() {
                                         <p className="text-center text-foreground dark:text-foreground">&quot;{testimonial.comment}&quot;</p>
                                         <div className="flex justify-start items-center  mt-4">
                                             <Avatar className="w-12 h-12 mr-4">
-                                                <AvatarImage src={testimonial.avatar} alt={`${testimonial.name}'s avatar`} />
+                                                <AvatarImage
+                                                    // src={testimonial.avatar}
+                                                    alt={`${testimonial.name}'s avatar`} />
                                                 <AvatarFallback>{testimonial.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
                                             </Avatar>
                                             <div>
@@ -158,8 +160,8 @@ export default function Testimonials() {
 
                         <Card key={step.id} className="flex flex-col items-center text-center">
                             <CardHeader className="p-6 flex flex-col items-center text-center" >
-                                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center mb-4">
-                                    <step.icon className="w-6 h-6 text-primary-foreground" />
+                                <div className="w-12 h-12 rounded-full bg-blue-200 text-2xl font-semibold flex items-center justify-center mb-4">
+                                    <span className='text-black '>{step.id}</span>
                                 </div>
                                 <CardTitle className="text-xl font-bold">{step.name}</CardTitle>
                             </CardHeader>

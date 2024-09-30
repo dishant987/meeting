@@ -61,7 +61,6 @@ const words = [
   {
     text: "Scheduling",
   },
-  
 ];
 
 const page = () => {
@@ -137,7 +136,7 @@ const page = () => {
         </div>
       </section>
       <div>
-        <Testimonials/>
+        <Testimonials />
       </div>
     </main>
   );

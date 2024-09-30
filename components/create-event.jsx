@@ -1,15 +1,13 @@
 "use client"
 import * as React from "react"
-import { Button } from "@/components/ui/button"
 import {
     Drawer,
-    DrawerClose,
+
     DrawerContent,
-    DrawerDescription,
-    DrawerFooter,
+
     DrawerHeader,
     DrawerTitle,
-    DrawerTrigger,
+
 } from "@/components/ui/drawer"
 import { useRouter, useSearchParams } from "next/navigation"
 import EventForm from "./event-form"
@@ -35,19 +33,12 @@ export default function CreateEventDrawer() {
         <Drawer open={open} onClose={handleClose}>
 
             <DrawerContent>
-                <div className="mx-auto w-full max-w-sm">
+                <div className="mx-auto w-full max-w-lg m-10">
                     <DrawerHeader>
-                        <DrawerTitle>Create New Event</DrawerTitle>
-                        <DrawerDescription>Set your daily activity goal.</DrawerDescription>
-                    </DrawerHeader>
-                    <EventForm />
+                        <DrawerTitle className="text-3xl p-3 text-center">Create New Event</DrawerTitle>
 
-                    <DrawerFooter>
-                        <Button>Submit</Button>
-                        <DrawerClose asChild>
-                            <Button variant="outline">Cancel</Button>
-                        </DrawerClose>
-                    </DrawerFooter>
+                    </DrawerHeader>
+                    <EventForm onSubmitForm={handleClose} />
                 </div>
             </DrawerContent>
         </Drawer>

@@ -70,7 +70,7 @@ export default function Header() {
 
           <button
             onClick={handleThemeChange}
-            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700 transition-colors duration-200"
+            className="p-2 rounded-full bg-gray-500 dark:bg-gray-300 transition-colors duration-200"
             aria-label="Toggle dark mode"
           >
             <motion.div
@@ -78,7 +78,7 @@ export default function Header() {
               transition={{ duration: 0.5, ease: "easeInOut" }}
             >
               {isDark ? (
-                <Moon className="h-5 w-5 text-white" />
+                <Moon className="h-5 w-5 text-black" />
               ) : (
                 <Sun className="h-5 w-5 text-yellow-500" />
               )}

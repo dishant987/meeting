@@ -55,8 +55,10 @@ const Dashboard = () => {
   }
   return (
     <div className='flex flex-col gap-4'>
-      <Card>
-        
+      <h1 className='text-5xl font-extrabold bg-gradient-to-bl from-blue-500 to-blue-800 bg-clip-text text-transparent '>Dashboard</h1>
+      <Card >
+
+
         <CardHeader>
           <CardTitle>Welcome, <span className='font-bold '>{user?.firstName}</span></CardTitle>
         </CardHeader>

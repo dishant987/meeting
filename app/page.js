@@ -71,7 +71,7 @@ const page = () => {
           className="lg:w-1/2 mt-10"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold gradient-title mb-6">
             Simplify Your Scheduling
@@ -92,7 +92,7 @@ const page = () => {
           className="lg:w-1/2 flex justify-center"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <div className="relative w-full  max-w-lg aspect-square ">
             <Image

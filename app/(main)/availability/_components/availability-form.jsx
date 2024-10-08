@@ -17,12 +17,14 @@ const AvailabilityForm = ({ initalData }) => {
         resolver: zodResolver(availabilitySchema),
         defaultValues: { ...initalData }
     })
-
+   
     const onSubmit = async (data) => {
-        setLoading(true)
+        // setLoading(true)
+        console.log(data);
+        return;
         try {
             const res = await updateAvailability(data)
-            console.log(res)
+
             if (res.success === true && res.message === "Availability updated successfully") {
                 toast.success(res.message)
             }
@@ -80,6 +82,7 @@ const AvailabilityForm = ({ initalData }) => {
                                                     onValueChange={field.onChange}
                                                     value={field.value}
                                                 >
+                                                    {/* {console.log(field)} */}
                                                     <SelectTrigger className='w-[180px]'>
                                                         <SelectValue placeholder="Start Time" />
                                                     </SelectTrigger>
@@ -101,6 +104,7 @@ const AvailabilityForm = ({ initalData }) => {
                                                 onValueChange={field.onChange}
                                                 value={field.value}
                                             >
+                                               
                                                 <SelectTrigger className='w-[180px]'>
                                                     <SelectValue placeholder="End Time" />
                                                 </SelectTrigger>
@@ -124,7 +128,7 @@ const AvailabilityForm = ({ initalData }) => {
                 <div className='flex items-center space-x-4'>
                     <span className='w-48'>Minimum gap before booking (minutes):</span>
                 </div>
-                <Input type="number" {...register("timeGap", { valueAsNumber: true })} className="w-[180px] mt-3" />
+                <Input type="number" {...register("timeGap", { valueAsNumber: true })} className="w-[180px] mt-3  " />
                 {errors?.timeGap && (
                     <span className="text-red-500 block mt-4">{errors?.timeGap?.message}</span>
                 )}

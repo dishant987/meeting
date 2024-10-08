@@ -45,5 +45,5 @@ export const availabilitySchema = z.object({
   friday: daySchema,
   saturday: daySchema,
   sunday: daySchema,
-  timeGap: z.number().min(0).int(),
+  timeGap: z.number().min(1).int(),
 });

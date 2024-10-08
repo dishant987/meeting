@@ -1,8 +1,23 @@
 import { getUserByUsername } from '@/actions/user'
 import EventCard from '@/components/event-card'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
+
 import { notFound } from 'next/navigation'
 import React from 'react'
+
+
+export async function generateMetadata({params}) {
+    const user = await getUserByUsername(params.username)
+    if (!user) {
+        return {
+            title: 'User not found'
+        }
+    }
+    return {
+        title:`${user.name}'s Profile | Scheduling App`,
+        description:`Book an event with ${user.name}. View available public events and book a schedules.`,
+    }
+}
 
 const UserPage = async ({ params }) => {
     const user = await getUserByUsername(params.username)
@@ -26,7 +41,7 @@ const UserPage = async ({ params }) => {
             {user.events.length === 0 ? (
                 <p className='text-gray-600 text-center'>No events found</p>
             ) : (
-                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4'>{user.events.map((event) => {
+                <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>{user.events.map((event) => {
                     return (
                         <EventCard
                             key={event.id}
